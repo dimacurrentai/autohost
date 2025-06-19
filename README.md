@@ -13,3 +13,13 @@ You may need to re-run the action manually.
 ---
 
 Observe https://dimacurrentai.github.io/autohost/.
+
+---
+
+To test locally:
+
+```
+(cd rust-wasm; cargo install wasm-pack)
+(cd rust-wasm; wasm-pack build --target web)
+python3 -m http.server
+```

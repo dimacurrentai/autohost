@@ -5,13 +5,11 @@
     <title>Rust + Wasm Example</title>
 </head>
 <body>
-    <pre>this is a bare repo with a bare action</pre>
-    <p>magic: <a href="./magic.html">link</a></p>
     <input id="name" type="text" placeholder="Enter your name">
-    <button id="greet">Greet via Wasm</button>
+    <button id="greet">Greet</button>
     <p id="output"></p>
     <script type="module">
-        import init, { greet } from './rust-wasm/pkg/rust_wasm.js';
+        import init, { greet } from './pkg/wasm_example.js';
 
         async function run() {
             await init();

@@ -24,6 +24,23 @@ jobs:
     steps:
       - name: clone
         uses: actions/checkout@v4
+      - name: install rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: wasm32-unknown-unknown
+      - name: install wasm-pack
+        run: |
+          cd rust-wasm
+          cargo install wasm-pack
+      - name: cargo test
+        run: |
+          cd rust-wasm
+          cargo test
+      - name: build wasm
+        run: |
+          cd rust-wasm
+          wasm-pack build --target web
       - name: setup
         uses: actions/configure-pages@v5
       - name: magic.html
